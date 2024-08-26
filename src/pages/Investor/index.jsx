@@ -3,7 +3,7 @@ import ProtectedRoute from "../../component/ProtectedRoute"
 function Investor() {
   return (
     <div>
-      <h1>Lorem</h1>
+      <h1>This is the investor page</h1>
     </div>
   )
 }

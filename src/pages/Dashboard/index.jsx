@@ -3,7 +3,7 @@ import ProtectedRoute from "../../component/ProtectedRoute"
 function Dashboard() {
   return (
     <div>
-      <h1>Lorem</h1>
+      <h1>This is the Dashboard</h1>
     </div>
   )
 }
