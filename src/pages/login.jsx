@@ -23,7 +23,7 @@ function Login() {
         dispatch(setCredentials({...res}));
         navigate('/overview')
     } catch (error) {
-        errorCheck(error);
+        message.error(error.data.message);
     }
   }
   return (
