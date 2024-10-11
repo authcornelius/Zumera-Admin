@@ -51,7 +51,7 @@ function Login() {
         >
           <Form.Item
             label="Username"
-            name="staff_id"
+            name="email"
             rules={[
               {
                 required: true,
@@ -75,12 +75,12 @@ function Login() {
             <Input.Password />
           </Form.Item>
 
-          <Form.Item
+          {/* <Form.Item
             name="remember"
             valuePropName="checked"
           >
             <Checkbox>Remember me</Checkbox>
-          </Form.Item>
+          </Form.Item> */}
 
           <Form.Item
             className='border'

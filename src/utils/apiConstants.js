@@ -1,8 +1,8 @@
 // Base URL for the API
-export const BASE_URL = "http://assetapi.insuretech.com.ng/api/v1";
+export const BASE_URL = "https://zumera-backend-gcy9.onrender.com";
 
 // Endpoints
-export const LOGIN = "/login"
+export const LOGIN = "/auth/login"
 export const OFFICE = "/offices"
 export const USER = "/users"
 export const STAFF = "/staff"
