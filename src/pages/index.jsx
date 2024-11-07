@@ -6,6 +6,8 @@ import Investor from "./Investor";
 import Subscribers from "./Subscribers";
 import Login from "./login";
 import Team from "./Team";
+import AddUser from "./Team/AddUser";
+import ViewUser from "./Team/ViewUser";
 
 export {
             Application,
@@ -15,6 +17,7 @@ export {
             Investor,
             Subscribers,
             Login, 
-            Team
-            
+            Team,
+            AddUser,
+            ViewUser
         }

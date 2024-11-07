@@ -1,3 +1,4 @@
+import { REGISTER } from "../../utils/apiConstants";
 import { USER } from "../../utils/apiConstants";
 import { apiSlice } from "./apiSlice";
 
@@ -6,9 +7,9 @@ import { apiSlice } from "./apiSlice";
 export const userApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getUsers: builder.query({
-            query: (page) => ({
+            query: () => ({
                 url: USER,
-                params:{page}
+                // params:{page}
             }),
             providesTags: ["users"],
         }),
@@ -18,27 +19,29 @@ export const userApiSlice = apiSlice.injectEndpoints({
             }),
             providesTags: ["single_user"],
         }),
+
+        // register a user
         createUser: builder.mutation({
             query: (data) => ({
-                url: USER,
+                url: REGISTER,
                 method: "POST",
                 body: data
             }),
             invalidatesTags: ["users"],
         }),
+
         updateUser: builder.mutation({
-            query: ({user_slug, data}) => ({
-                url: `${USER}/${user_slug}`,
-                method: "PUT",
+            query: ({user_id, data}) => ({
+                url: `${USER}/${user_id}`,
+                method: "PATCH",
                 body: data
             }),
             invalidatesTags: ["users", "single_user"],
         }),
-        updateUserStatus: builder.mutation({
-            query: ({ user_slug, status }) => ({
-                url: `${USER}/${user_slug}`,
-                method: "PATCH",
-                body: { status }
+        deleteUser: builder.mutation({
+            query: ({user_id}) => ({
+                url: `${USER}/${user_id}`,
+                method: "DELETE"
             }),
             invalidatesTags: ["users", "single_user"],
         }),
@@ -49,7 +52,8 @@ export const userApiSlice = apiSlice.injectEndpoints({
 export const {
     useCreateUserMutation,
     useGetUsersQuery,
-    useGetSingleUserQuery,
     useUpdateUserMutation,
+    useGetSingleUserQuery,
+    useDeleteUserMutation,
     useUpdateUserStatusMutation,
 } = userApiSlice

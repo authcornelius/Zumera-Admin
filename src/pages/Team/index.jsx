@@ -1,9 +1,9 @@
-import ProtectedRoute from "../../component/ProtectedRoute"
+import TeamTable from "./TeamTable"
 
 function Team() {
   return (
     <div>
-      <h1>This is the team</h1>
+      <TeamTable />
     </div>
   )
 }

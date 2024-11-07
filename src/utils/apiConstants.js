@@ -1,8 +1,9 @@
 // Base URL for the API
-export const BASE_URL = "https://zumera-backend-gcy9.onrender.com";
+export const BASE_URL = "https://zumera-backend.onrender.com";
 
 // Endpoints
 export const LOGIN = "/auth/login"
+export const REGISTER = "/auth/register"
 export const OFFICE = "/offices"
 export const USER = "/users"
 export const STAFF = "/staff"

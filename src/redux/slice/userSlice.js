@@ -10,11 +10,11 @@ const userSlice = createSlice({
   name: "user",
   reducers: {
     updateUser: (state, action) => {
-      state.user = action.payload;
+      state.user = action.payload.access_token;
     },
     setCredentials: (state, action) => {
       state.user = action.payload.data;
-      Cookies.set("jwtasset", action.payload.token, { expires: 2 });
+      Cookies.set("jwtasset", action.payload.access_token, { expires: 2 });
     },
     logout: (state) => {
       state.user = null;

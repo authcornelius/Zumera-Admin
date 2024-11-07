@@ -1,7 +1,6 @@
 import '../styles/login.css'
-import { Button, Checkbox, Form, Image, Input, message } from "antd"
+import { Button, Form, Image, Input, message } from "antd"
 import Logo from '/zumera-logo-red.png'
-import { errorCheck } from "../utils/utils";
 import { useLoginMutation } from "../redux/slice/authApiSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -74,13 +73,6 @@ function Login() {
           >
             <Input.Password />
           </Form.Item>
-
-          {/* <Form.Item
-            name="remember"
-            valuePropName="checked"
-          >
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item> */}
 
           <Form.Item
             className='border'

@@ -6,6 +6,7 @@ const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
   prepareHeaders: (headers) => {
     const token = Cookies.get("jwtasset");
+    
 
     if (token) {
       headers.set("authorization", `Bearer ${token}`);
