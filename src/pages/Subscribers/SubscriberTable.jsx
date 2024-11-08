@@ -7,7 +7,7 @@ import { format } from "timeago.js";
 function SubscriberTable() {
     const {data, isLoading} = useGetSubscriberQuery();
 
-    const dataSource = data;
+    const dataSource = data?.data;
     
     const columns = [
         {

@@ -1,9 +1,10 @@
-import ProtectedRoute from "../../component/ProtectedRoute"
+import InvestorTable from "./Investortable"
+
 
 function Investor() {
   return (
     <div>
-      <h1>This is the investor page</h1>
+      <InvestorTable />
     </div>
   )
 }

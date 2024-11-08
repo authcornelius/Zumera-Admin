@@ -5,6 +5,7 @@ export const BASE_URL = "https://zumera-backend.onrender.com";
 export const LOGIN = "/auth/login"
 export const REGISTER = "/auth/register"
 export const SUBSCRIBER = "/subscriber"
+export const INVESTOR = "/investor"
 export const USER = "/users"
 export const STAFF = "/staff"
 export const ACCOUNT = "/accounts"
