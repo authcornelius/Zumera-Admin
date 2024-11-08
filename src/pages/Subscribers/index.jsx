@@ -1,9 +1,10 @@
-import ProtectedRoute from "../../component/ProtectedRoute"
+
+import SubscriberTable from "./SubscriberTable"
 
 function Subscribers() {
   return (
     <div>
-      <h1>This is the subscriber</h1>
+      <SubscriberTable />
     </div>
   )
 }
