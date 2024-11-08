@@ -93,8 +93,8 @@ function ViewUser() {
                             rules={[{ required: true, message: 'Please select role!' }]}
                         >
                             <Select disabled={!isEditing}>
-                                <Select.Option value="moderator">Moderator</Select.Option>
                                 <Select.Option value="admin">Admin</Select.Option>
+                                <Select.Option value="moderator">Moderator</Select.Option>
                                 <Select.Option value="user">User</Select.Option>
                             </Select>
                         </FormItem>
