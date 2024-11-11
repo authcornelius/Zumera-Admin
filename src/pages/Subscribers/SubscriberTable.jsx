@@ -1,11 +1,13 @@
 import { Table } from "antd"
 import { useGetSubscriberQuery } from "../../redux/slice/subscriberInvestorApiSlice";
 import { format } from "timeago.js";
+import { useState } from "react";
 
 
 
 function SubscriberTable() {
-    const {data, isLoading} = useGetSubscriberQuery();
+    const [currentPage, setCurrentPage] = useState(1);
+    const {data, isLoading} = useGetSubscriberQuery(currentPage);
 
     const dataSource = data?.data;
     
@@ -42,6 +44,14 @@ function SubscriberTable() {
                 columns={columns}
                 dataSource={dataSource}
                 loading={isLoading}
+                pagination={{
+                    current: currentPage,
+                    pageSize: 15,
+                    total: data?.total,
+                    onChange: (page) => setCurrentPage(page),
+                    showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
+                    showSizeChanger: false
+                }}
             />
         </div>
     </div>

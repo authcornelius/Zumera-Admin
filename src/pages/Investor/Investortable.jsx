@@ -44,20 +44,14 @@ function InvestorTable() {
                 columns={columns}
                 dataSource={dataSource}
                 loading={isLoading}
-                // pagination={{
-                //     current: currentPage,
-                //     pageSize: data?.page,
-                //     total: data?.total || 0,
-                //     onChange: (page) => setCurrentPage(page),
-                // }}
-                pagination={
-                    {
-                        current: currentPage,
-                        pageSize: 15,
-                        total: data?.total || 0,
-                        onChange: (page) => setCurrentPage(page),
-                    }
-                }
+                pagination={{
+                    current: currentPage,
+                    pageSize: 15,
+                    total: data?.total,
+                    onChange: (page) => setCurrentPage(page),
+                    showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
+                    showSizeChanger: false
+                }}
             />
         </div>
     </div>
