@@ -49,7 +49,6 @@ function InvestorTable() {
                     pageSize: 15,
                     total: data?.total,
                     onChange: (page) => setCurrentPage(page),
-                    showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
                     showSizeChanger: false
                 }}
             />
