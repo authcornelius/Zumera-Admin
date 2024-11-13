@@ -5,7 +5,7 @@ import { MdDelete } from "react-icons/md"
 import { Link } from "react-router-dom"
 import { useGetCareerQuery } from "../../redux/slice/careerApiSlice"
 import { useState } from "react"
-import DeleteModal from "./modal/deleteModal"
+import DeleteModal from "./modal/DeleteModal"
 
 function CareerTable() {
     const {data: allJob, isLoading} = useGetCareerQuery()
