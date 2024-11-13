@@ -1,7 +1,7 @@
 import Protect from "./component/Protect";
 import ProtectedRoute from "./component/ProtectedRoute";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AddUser, Application, Blog, Career, Dashboard, Investor, Login, Subscribers, Team, ViewUser } from "./pages";
+import { AddJob, AddUser, Application, Blog, Career, Dashboard, Investor, Login, Subscribers, Team, ViewJob, ViewUser } from "./pages";
 
 
 function App() {
@@ -21,6 +21,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/subscribers" element={<Subscribers />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/career/add-job" element={<AddJob />} />
+          <Route path="/career/edit-job/:id" element={<ViewJob />} />
           <Route path="/application" element={<Application />} />
           <Route path="/team" element={<Team />} />
           <Route path="/team/add-user" element={<AddUser />} />
