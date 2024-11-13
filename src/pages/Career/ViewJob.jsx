@@ -4,6 +4,7 @@ import TextArea from "antd/es/input/TextArea";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetSingleCareerQuery, useUpdateSingleJobMutation } from "../../redux/slice/careerApiSlice";
 import { useEffect, useState } from "react";
+import { data } from "autoprefixer";
 
 
 function ViewJob() {
@@ -17,27 +18,20 @@ function ViewJob() {
     const [ updateSingleJob, { isLoading } ] = useUpdateSingleJobMutation();
 
     const handleSubmit = async (values) => {
-        console.log(values);
-        
         try {
             const payload = {
                 id: params.id,
-                [values.department]: {
+                data: {
                     title: values.title,
                     description: values.description,
                     requirements: values.requirements,
                     skill: values.skill
                 }
             };
-            console.log(payload);
-            
             
             const res = await updateSingleJob(payload).unwrap();
-            console.log(res);
             message.success(res.message)
             setIsEditing(false);
-            Navigate(-1);
-            
         } catch (error) {
             console.error('Failed to update job:', error);
         }
