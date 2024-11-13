@@ -12,6 +12,7 @@ function CareerTable() {
     const [deleteModalOpen, setDeleteModalOpen] = useState(false)
     const [selectedId, setSelectedId] = useState(null)
     const [selectedJob, setSelectedJob] = useState(null)
+    
 
     // Function to get all jobs from different departments
     const getAllJobs = () => {
@@ -84,14 +85,15 @@ function CareerTable() {
                         </div>
                     ))}
                 </div>
-
-                <DeleteModal
-                    deleteModalOpen={deleteModalOpen}
-                    setDeleteModalOpen={setDeleteModalOpen}
-                    title="Delete Job Position"
-                    id={selectedId}
-                    jobData={selectedJob}
-                />
+                {deleteModalOpen && (
+                    <DeleteModal
+                        deleteModalOpen={deleteModalOpen}
+                        setDeleteModalOpen={setDeleteModalOpen}
+                        title="Delete Job Position"
+                        id={selectedId}
+                        jobData={selectedJob}
+                    /> 
+                )}
             </div>
         </Spin>
     )

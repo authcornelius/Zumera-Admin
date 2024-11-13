@@ -10,7 +10,12 @@ function DeleteModal({
   id,
   jobData
 }) {
+
+  console.log(id);
+  
   const { data: singleJob } = useGetSingleCareerQuery(id);
+  console.log(singleJob);
+  
 
   const jobDetails = jobData?.ArchitectureAndDesigns || jobData?.CooperateAttorneys || jobData?.AccountingAndFinances || jobData?.CivilEngineerings || jobData?.Hrs || jobData?.Operations || jobData?.Procurements || jobData?.SalesExecutive;
   
