@@ -12,6 +12,17 @@ export const blogApiSlice = apiSlice.injectEndpoints({
             }),
             providesTags: ["all_blogs"],
         }),
+
+        // // post a blog
+        createBlog: builder.mutation({
+            query: (data) => ({
+                url: BLOG,
+                method: "POST",
+                body: data
+            }),
+            invalidatesTags: ["all_blogs"],
+        }),
+
         // getSingleUser: builder.query({
         //     query: (user_slug) => ({
         //         url: `${USER}/${user_slug}`,
@@ -19,15 +30,6 @@ export const blogApiSlice = apiSlice.injectEndpoints({
         //     providesTags: ["single_user"],
         // }),
 
-        // // register a user
-        // createUser: builder.mutation({
-        //     query: (data) => ({
-        //         url: REGISTER,
-        //         method: "POST",
-        //         body: data
-        //     }),
-        //     invalidatesTags: ["users"],
-        // }),
 
         // updateUser: builder.mutation({
         //     query: ({user_id, data}) => ({
@@ -50,6 +52,7 @@ export const blogApiSlice = apiSlice.injectEndpoints({
 
 export const {
     useGetAllBlogQuery,
+    useCreateBlogMutation,
     useCreateUserMutation,
     useGetUsersQuery,
     useUpdateUserMutation,

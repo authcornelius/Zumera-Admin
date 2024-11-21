@@ -1,12 +1,17 @@
-import { Button, Image } from "antd"
+import { Button, Image, message } from "antd"
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from "react"
 import { clearPreviewData } from "../../redux/slice/blogSlice";
 import { useNavigate } from "react-router-dom";
+import { useCreateBlogMutation } from "../../redux/slice/blogApiSlice";
+import { errorCheck } from "../../utils/utils";
 
 function Preview() {
   const navigate = useNavigate()
   const previewData = useSelector((state) => state.blog.previewData);
+
+  const [createBlog, { isLoading }] = useCreateBlogMutation();
+  
   const [imageUrls, setImageUrls] = useState({
     image1: null,
     image2: null,
@@ -43,9 +48,31 @@ function Preview() {
     };
   }, [previewData]);
 
-  const handlePublish = () => {
+  const handlePublish = async() => {
+    const blogData = {
+      title: previewData.title,
+      blogText1: previewData.paragraph1 || null,
+      blogText2: previewData.paragraph2 || null,
+      blogText3: previewData.paragraph3 || null,
+      image1: previewData.image1?.file?.originFileObj || null,
+      image2: previewData.image2?.file?.originFileObj || null,
+      image3: previewData.image3?.file?.originFileObj || null,
+      blogUrl1: previewData.url1 || null,
+      blogUrl2: previewData.url2 || null,
+      blogUrl3: previewData.url3 || null,
+    };
+
+    try {
+      const res = await createBlog(blogData).unwrap();
+      message.success(res.message);
+      navigate('/blog')
+    } catch (error) {
+      errorCheck(error);
+    }
+    
     // Your publish logic here
     dispatch(clearPreviewData());
+    navigate('/blog')
   };
 
   return (
@@ -77,7 +104,7 @@ function Preview() {
           <Button 
             type="primary" 
             className="bg-[#8d0a1f] hover:!bg-[#8d0a20da]"
-            // htmlType="submit"
+            htmlType="submit"
             onClick={handlePublish}
           >
             Publish

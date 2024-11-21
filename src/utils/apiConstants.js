@@ -1,5 +1,6 @@
 // Base URL for the API
-export const BASE_URL = "https://zumera-backend.onrender.com";
+// export const BASE_URL = "https://zumera-backend.onrender.com";
+export const BASE_URL = "http://localhost:5000";
 
 // Endpoints
 export const LOGIN = "/auth/login"

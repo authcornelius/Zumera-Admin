@@ -99,7 +99,7 @@ function AddBlog() {
                         }]
                     }
                 >
-                    <Upload >
+                    <Upload>
                         <Button icon={<UploadOutlined />}>Click to Upload</Button>
                     </Upload>
                 </FormItem>
@@ -108,7 +108,7 @@ function AddBlog() {
                     label="Second Image"
                     name="image2"
                 >
-                    <Upload >
+                    <Upload>
                         <Button icon={<UploadOutlined />}>Click to Upload</Button>
                     </Upload>
                 </FormItem>
@@ -117,7 +117,7 @@ function AddBlog() {
                     label="Third Image"
                     name="image3"
                 >
-                    <Upload >
+                    <Upload>
                         <Button icon={<UploadOutlined />}>Click to Upload</Button>
                     </Upload>
                 </FormItem>
